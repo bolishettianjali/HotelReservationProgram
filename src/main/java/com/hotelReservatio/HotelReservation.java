@@ -1,7 +1,23 @@
 package com.hotelReservatio;
 
+import java.util.ArrayList;
+
 public class HotelReservation {
-    public static void main(String[] args){
-        System.out.println("welcome to Hotel Reservation program ");
+
+        static public ArrayList<Hotel> hotels = new ArrayList<>();
+
+        public ArrayList<Hotel> addHotel (Hotel hotel){
+            hotels.add(hotel);
+            return hotels;
+        }
+
+        public void printHotels () {
+            /*
+            Using lamda to print values
+             */
+            hotels.stream().forEach(hotel -> System.out.println(hotel.hotelName + " " + hotel.rate));
+        }
     }
-}
+
+
+
